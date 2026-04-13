@@ -56,10 +56,7 @@ background:var(--card);
 border-radius:14px;
 margin-bottom:12px;
 border:1px solid var(--border);
-transition:0.15s;
 }
-
-.card:active { transform:scale(0.99); }
 
 .card.done {
 opacity:0.6;
@@ -71,7 +68,6 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:14px;
-gap:10px;
 }
 
 .left {
@@ -126,7 +122,6 @@ line-height:1.5;
 .detail p { margin:0 0 8px 0; }
 .detail p:last-child { margin-bottom:0; }
 .detail strong { color:var(--text); }
-
 </style>
 </head>
 
@@ -146,35 +141,47 @@ line-height:1.5;
 <!-- DIA A -->
 <div class="day active">
 
+<!-- Elevação pélvica -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'a1')"></div>Elevação pélvica (barra) 4x12</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a1')"></div>
+Elevação pélvica (barra) 4x12
+</div>
 <div class="load-box"><input class="load" data-id="a1">kg</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Escápulas apoiadas no banco, pés no chão. Barra apoiada no quadril com proteção.</p>
+<p><strong>Setup:</strong> Escápulas apoiadas no banco, pés no chão e barra sobre o quadril (use proteção).</p>
 <p><strong>Execução:</strong> Eleve o quadril até alinhar tronco e coxas. Segure 1s no topo contraindo glúteos.</p>
-<p><strong>Erros comuns:</strong> Arquear lombar, subir com impulso, não travar no topo.</p>
+<p><strong>Erros comuns:</strong> Arquear lombar, subir com impulso.</p>
 <p><strong>Músculos:</strong> Glúteo máximo.</p>
 </div>
 </div>
 
+<!-- Stiff -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'a2')"></div>Stiff (halter) 4x10</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a2')"></div>
+Stiff (halter) 4x10
+</div>
 <div class="load-box"><input class="load" data-id="a2">kg</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Em pé com halteres, pés na largura do quadril, joelhos levemente flexionados.</p>
-<p><strong>Execução:</strong> Empurre o quadril para trás mantendo coluna neutra. Suba contraindo glúteos.</p>
+<p><strong>Setup:</strong> Em pé com halteres, pés na largura do quadril.</p>
+<p><strong>Execução:</strong> Empurre o quadril para trás mantendo a coluna neutra e suba contraindo glúteos.</p>
 <p><strong>Erros comuns:</strong> Curvar lombar, dobrar demais o joelho.</p>
 <p><strong>Músculos:</strong> Posterior de coxa e glúteos.</p>
 </div>
 </div>
 
+<!-- Sumô -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'a3')"></div>Agachamento sumô (halter) 3x15</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a3')"></div>
+Agachamento sumô (halter) 3x15
+</div>
 <div class="load-box"><input class="load" data-id="a3">kg</div>
 </div>
 <div class="detail">
@@ -185,47 +192,68 @@ line-height:1.5;
 </div>
 </div>
 
-<!-- DIA B -->
-</div>
-
-<div class="day">
-
+<!-- Flexora -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'b1')"></div>Desenvolvimento (máquina) 3x12</div>
-<div class="load-box"><input class="load" data-id="b1">kg</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a4')"></div>
+Cadeira flexora (máquina) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="a4">kg</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Banco ajustado, mãos na altura dos ombros.</p>
-<p><strong>Execução:</strong> Empurre acima da cabeça e desça controlando.</p>
-<p><strong>Erros comuns:</strong> Arquear lombar.</p>
-<p><strong>Músculos:</strong> Ombro anterior.</p>
+<p><strong>Setup:</strong> Ajuste o banco alinhando o joelho com o eixo da máquina.</p>
+<p><strong>Execução:</strong> Flexione o joelho trazendo o calcanhar ao glúteo.</p>
+<p><strong>Erros comuns:</strong> Tirar quadril do banco.</p>
+<p><strong>Músculos:</strong> Posterior de coxa.</p>
 </div>
 </div>
 
+<!-- Abdução -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'b2')"></div>Elevação lateral (halter) 3x15</div>
-<div class="load-box"><input class="load" data-id="b2">kg</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a5')"></div>
+Abdução (cabo) 3x15
+</div>
+<div class="load-box"><input class="load" data-id="a5">kg</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Halteres ao lado do corpo.</p>
-<p><strong>Execução:</strong> Eleve até a linha do ombro.</p>
-<p><strong>Erros comuns:</strong> Usar impulso.</p>
-<p><strong>Músculos:</strong> Deltoide lateral.</p>
+<p><strong>Setup:</strong> Prenda a tornozeleira no cabo.</p>
+<p><strong>Execução:</strong> Afaste a perna lateralmente sem inclinar o tronco.</p>
+<p><strong>Erros comuns:</strong> Balançar o corpo.</p>
+<p><strong>Músculos:</strong> Glúteo médio.</p>
 </div>
 </div>
 
+<!-- Kickback -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
-<div class="left"><div class="check" onclick="done(event,this,'b7')"></div>Tríceps testa (barra W) 3x12</div>
-<div class="load-box"><input class="load" data-id="b7">kg</div>
+<div class="left">
+<div class="check" onclick="done(event,this,'a6')"></div>
+Kickback (cabo) 3x15
+</div>
+<div class="load-box"><input class="load" data-id="a6">kg</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Deitado em banco com barra W.</p>
-<p><strong>Execução:</strong> Flexione cotovelos levando a barra à testa e estenda.</p>
-<p><strong>Erros comuns:</strong> Abrir cotovelos.</p>
-<p><strong>Músculos:</strong> Tríceps.</p>
+<p><strong>Setup:</strong> Tornozeleira presa ao cabo.</p>
+<p><strong>Execução:</strong> Empurre a perna para trás estendendo o quadril.</p>
+<p><strong>Erros comuns:</strong> Usar lombar.</p>
+<p><strong>Músculos:</strong> Glúteo máximo.</p>
+</div>
+</div>
+
+<!-- Cardio -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'a7')"></div>
+Cardio (elíptico) 15min
+</div>
+</div>
+<div class="detail">
+<p><strong>Execução:</strong> Ritmo contínuo moderado.</p>
+<p><strong>Músculos:</strong> Sistema cardiovascular.</p>
 </div>
 </div>
 
