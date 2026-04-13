@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,256 +5,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meu Treino</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-:root {
---bg: #0f0f0f;
---card: #1e1e1e;
---accent: #e8b86d;
---accent2: #c97d4e;
---text: #f0ece4;
---muted: #777;
---border: #2c2c2c;
---radius: 14px;
-}
-
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-background: var(--bg);
-color: var(--text);
-font-family: 'DM Sans', sans-serif;
-padding-bottom: 100px;
-}
-
-header {
-padding: 32px 20px;
-border-bottom: 1px solid var(--border);
-}
-
-h1 {
-font-family: 'Playfair Display', serif;
-color: var(--accent);
-}
-
-.tabs {
-display:flex;
-gap:8px;
-padding:16px;
-overflow:auto;
-}
-
-.tab {
-padding:8px 14px;
-border-radius:20px;
-border:1px solid #333;
-background:none;
-color:var(--muted);
-}
-
-.tab.active {
-background: var(--accent);
-color:#000;
-}
-
-.day-panel { display:none; }
-.day-panel.active { display:block; }
-
-.exercise-card {
-background: var(--card);
-margin:10px;
-border-radius:12px;
-padding:12px;
-}
-
-.exercise-top {
-display:flex;
-justify-content:space-between;
-align-items:center;
-cursor:pointer;
-}
-
-.load-input {
-width:50px;
-background:none;
-border:none;
-color:var(--accent);
-text-align:right;
-}
-
-.exercise-detail { display:none; font-size:0.85rem; margin-top:10px; }
-.exercise-detail.open { display:block; }
-
-.timer {
-position:fixed;
-bottom:20px;
-right:20px;
-background:#1e1e1e;
-padding:12px;
-border-radius:10px;
-border:1px solid #333;
-}
+body { background:#0f0f0f; color:#fff; font-family:sans-serif; padding:20px; }
+h1 { color:#e8b86d; }
+.card { background:#1e1e1e; padding:12px; border-radius:10px; margin-bottom:10px; }
+input { width:60px; background:none; border:none; color:#e8b86d; text-align:right; }
+.timer { position:fixed; bottom:20px; right:20px; background:#1e1e1e; padding:10px; border-radius:10px; }
 </style>
 </head>
 
 <body>
 
-<header>
 <h1>Meu Treino 💪</h1>
-<p>4 dias · Glúteo + braços + definição</p>
-</header>
 
-<div class="tabs">
-<button class="tab active" onclick="showDay(0)">A</button>
-<button class="tab" onclick="showDay(1)">B</button>
-<button class="tab" onclick="showDay(2)">C</button>
-<button class="tab" onclick="showDay(3)">D</button>
-</div>
+<h2>🍑 Dia A – Glúteo + Posterior</h2>
 
-<!-- DIA A -->
-<div class="day-panel active">
-<h2>🍑 Glúteo + Posterior</h2>
-
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Elevação pélvica</span>
-<input class="load-input" data-id="a1">
-</div>
-<div class="exercise-detail">Foco em glúteo</div>
-</div>
-
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Stiff</span>
-<input class="load-input" data-id="a2">
-</div>
-<div class="exercise-detail">Posterior</div>
-</div>
+<div class="card">Elevação pélvica 4x12 <input data-id="a1"></div>
+<div class="card">Stiff halteres 4x10 <input data-id="a2"></div>
+<div class="card">Agachamento sumô 3x15 <input data-id="a3"></div>
+<div class="card">Cadeira flexora 3x12 <input data-id="a4"></div>
+<div class="card">Abdução no cabo 3x15 <input data-id="a5"></div>
+<div class="card">Kickback 3x15 <input data-id="a6"></div>
 
 <p>Cardio: Elíptico 15 min</p>
-</div>
 
-<!-- DIA B -->
-<div class="day-panel">
-<h2>💪 Braços</h2>
+<h2>💪 Dia B – Braços</h2>
 
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Desenvolvimento máquina</span>
-<input class="load-input" data-id="b1">
-</div>
-<div class="exercise-detail">Ombro</div>
-</div>
+<div class="card">Desenvolvimento máquina 3x12 <input data-id="b1"></div>
+<div class="card">Elevação lateral 3x15 <input data-id="b2"></div>
+<div class="card">Elevação frontal 3x12 <input data-id="b3"></div>
+<div class="card">Rosca direta 3x12 <input data-id="b4"></div>
+<div class="card">Rosca martelo 3x12 <input data-id="b5"></div>
+<div class="card">Tríceps corda 3x15 <input data-id="b6"></div>
+<div class="card">Tríceps testa 3x12 <input data-id="b7"></div>
 
 <p>Cardio: Escada 15 min</p>
-</div>
 
-<!-- DIA C -->
-<div class="day-panel">
-<h2>🦵 Quadríceps</h2>
+<h2>🦵 Dia C – Quadríceps</h2>
 
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Agachamento máquina</span>
-<input class="load-input" data-id="c1">
-</div>
-<div class="exercise-detail">Hack</div>
-</div>
+<div class="card">Agachamento máquina 4x10 <input data-id="c1"></div>
+<div class="card">Leg press 4x12 <input data-id="c2"></div>
+<div class="card">Afundo 3x12 <input data-id="c3"></div>
+<div class="card">Extensora 3x15 <input data-id="c4"></div>
+<div class="card">Panturrilha 3x15 <input data-id="c5"></div>
 
 <p>Cardio: Elíptico 15 min</p>
-</div>
 
-<!-- DIA D -->
-<div class="day-panel">
-<h2>🔙 Costas + Core</h2>
+<h2>🔙 Dia D – Costas + Core</h2>
 
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Puxada neutra</span>
-<input class="load-input" data-id="d1">
-</div>
-<div class="exercise-detail">Mais seguro pro ombro</div>
-</div>
-
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Remada máquina</span>
-<input class="load-input" data-id="d2">
-</div>
-<div class="exercise-detail">Sem sobrecarga lombar</div>
-</div>
-
-<div class="exercise-card">
-<div class="exercise-top" onclick="toggleCard(this)">
-<span>Dead bug</span>
-<input class="load-input" data-id="d3">
-</div>
-<div class="exercise-detail">Core seguro</div>
-</div>
+<div class="card">Puxada neutra 4x10 <input data-id="d1"></div>
+<div class="card">Remada máquina 3x12 <input data-id="d2"></div>
+<div class="card">Remada unilateral 3x12 <input data-id="d3"></div>
+<div class="card">Supino inclinado 3x12 <input data-id="d4"></div>
+<div class="card">Dead bug 3x15 <input data-id="d5"></div>
+<div class="card">Elevação pernas 3x15 <input data-id="d6"></div>
+<div class="card">Prancha 3x45s <input data-id="d7"></div>
 
 <p>Cardio: Escada 15 min</p>
-</div>
 
 <div class="timer">
-<span id="timerText">60s</span><br>
-<button onclick="startTimer(60)">Iniciar</button>
+<span id="t">60</span>
+<button onclick="start()">▶</button>
 </div>
 
 <script>
-function showDay(i){
-document.querySelectorAll('.day-panel').forEach((d,index)=>{
-d.classList.toggle('active', index===i)
-})
-document.querySelectorAll('.tab').forEach((t,index)=>{
-t.classList.toggle('active', index===i)
-})
-}
-
-function toggleCard(el){
-el.nextElementSibling.classList.toggle('open')
-startTimer(60)
-}
-
 let timer;
-
-function startTimer(s){
-clearInterval(timer)
-let t=s
-const el=document.getElementById('timerText')
-
+function start(){
+clearInterval(timer);
+let t=60;
+const el=document.getElementById('t');
 timer=setInterval(()=>{
-t--
-el.innerText=t+"s"
-if(t<=0){
-clearInterval(timer)
-el.innerText="Bora 💪"
-}
-},1000)
+t--;
+el.innerText=t;
+if(t<=0){clearInterval(timer);el.innerText="Bora";}
+},1000);
 }
 
-const KEY="treino";
+const data=JSON.parse(localStorage.getItem("treino")||"{}");
 
-function load(){
-return JSON.parse(localStorage.getItem(KEY)||"{}")
+document.querySelectorAll("input").forEach(i=>{
+if(data[i.dataset.id]) i.value=data[i.dataset.id];
+
+i.oninput=()=>{
+data[i.dataset.id]=i.value;
+localStorage.setItem("treino",JSON.stringify(data));
 }
-
-function save(data){
-localStorage.setItem(KEY, JSON.stringify(data))
-}
-
-const data=load();
-
-document.querySelectorAll('.load-input').forEach(input=>{
-const id=input.dataset.id
-if(data[id]) input.value=data[id]
-
-input.addEventListener('input',()=>{
-const d=load()
-d[id]=input.value
-save(d)
-})
-})
+});
 </script>
 
 </body>
