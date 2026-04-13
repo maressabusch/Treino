@@ -6,84 +6,252 @@
 <title>Meu Treino</title>
 
 <style>
-body { background:#0f0f0f; color:#fff; font-family:sans-serif; padding:20px; }
-h1 { color:#e8b86d; }
-.card { background:#1e1e1e; padding:12px; border-radius:10px; margin-bottom:10px; }
-input { width:60px; background:none; border:none; color:#e8b86d; text-align:right; }
-.timer { position:fixed; bottom:20px; right:20px; background:#1e1e1e; padding:10px; border-radius:10px; }
+:root {
+--bg:#0f0f0f;
+--card:#1e1e1e;
+--accent:#e8b86d;
+--text:#f0ece4;
+--muted:#777;
+}
+
+body {
+margin:0;
+font-family:sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+header {
+padding:24px;
+border-bottom:1px solid #222;
+}
+
+h1 { color:var(--accent); }
+
+.tabs {
+display:flex;
+gap:8px;
+padding:12px;
+overflow:auto;
+}
+
+.tab {
+padding:8px 16px;
+border-radius:20px;
+border:1px solid #333;
+background:none;
+color:var(--muted);
+}
+
+.tab.active {
+background:var(--accent);
+color:#000;
+font-weight:bold;
+}
+
+.day { display:none; padding:16px; }
+.day.active { display:block; }
+
+.card {
+background:var(--card);
+border-radius:12px;
+margin-bottom:10px;
+overflow:hidden;
+}
+
+.top {
+display:flex;
+justify-content:space-between;
+padding:12px;
+cursor:pointer;
+}
+
+.load {
+width:55px;
+background:none;
+border:none;
+color:var(--accent);
+text-align:right;
+font-weight:bold;
+}
+
+.detail {
+display:none;
+padding:10px;
+font-size:0.85rem;
+color:#bbb;
+border-top:1px solid #333;
+}
+
+.detail.open { display:block; }
+
+.cardio {
+margin-top:12px;
+font-size:0.9rem;
+color:var(--accent);
+}
 </style>
 </head>
 
 <body>
 
+<header>
 <h1>Meu Treino 💪</h1>
+<p>4 dias · Glúteo + braços + definição</p>
+</header>
 
-<h2>🍑 Dia A – Glúteo + Posterior</h2>
+<div class="tabs">
+<button class="tab active" onclick="show(0)">A</button>
+<button class="tab" onclick="show(1)">B</button>
+<button class="tab" onclick="show(2)">C</button>
+<button class="tab" onclick="show(3)">D</button>
+</div>
 
-<div class="card">Elevação pélvica 4x12 <input data-id="a1"></div>
-<div class="card">Stiff halteres 4x10 <input data-id="a2"></div>
-<div class="card">Agachamento sumô 3x15 <input data-id="a3"></div>
-<div class="card">Cadeira flexora 3x12 <input data-id="a4"></div>
-<div class="card">Abdução no cabo 3x15 <input data-id="a5"></div>
-<div class="card">Kickback 3x15 <input data-id="a6"></div>
+<!-- DIA A -->
+<div class="day active">
 
-<p>Cardio: Elíptico 15 min</p>
+<div class="card"><div class="top" onclick="toggle(this)">
+Elevação pélvica 4x12 <input class="load" data-id="a1"></div>
+<div class="detail">Apoie os ombros no banco, barra sobre o quadril. Eleve até alinhar com o tronco, contraindo o glúteo no topo.</div></div>
 
-<h2>💪 Dia B – Braços</h2>
+<div class="card"><div class="top" onclick="toggle(this)">
+Stiff com halteres 4x10 <input class="load" data-id="a2"></div>
+<div class="detail">Desça os halteres mantendo a coluna neutra e sentindo o alongamento do posterior.</div></div>
 
-<div class="card">Desenvolvimento máquina 3x12 <input data-id="b1"></div>
-<div class="card">Elevação lateral 3x15 <input data-id="b2"></div>
-<div class="card">Elevação frontal 3x12 <input data-id="b3"></div>
-<div class="card">Rosca direta 3x12 <input data-id="b4"></div>
-<div class="card">Rosca martelo 3x12 <input data-id="b5"></div>
-<div class="card">Tríceps corda 3x15 <input data-id="b6"></div>
-<div class="card">Tríceps testa 3x12 <input data-id="b7"></div>
+<div class="card"><div class="top" onclick="toggle(this)">
+Agachamento sumô 3x15 <input class="load" data-id="a3"></div>
+<div class="detail">Pés abertos e apontados pra fora. Desça mantendo joelhos alinhados.</div></div>
 
-<p>Cardio: Escada 15 min</p>
+<div class="card"><div class="top" onclick="toggle(this)">
+Cadeira flexora 3x12 <input class="load" data-id="a4"></div>
+<div class="detail">Puxe controlado e segure 1s no topo.</div></div>
 
-<h2>🦵 Dia C – Quadríceps</h2>
+<div class="card"><div class="top" onclick="toggle(this)">
+Abdução no cabo 3x15 <input class="load" data-id="a5"></div>
+<div class="detail">Afaste a perna sem inclinar o tronco.</div></div>
 
-<div class="card">Agachamento máquina 4x10 <input data-id="c1"></div>
-<div class="card">Leg press 4x12 <input data-id="c2"></div>
-<div class="card">Afundo 3x12 <input data-id="c3"></div>
-<div class="card">Extensora 3x15 <input data-id="c4"></div>
-<div class="card">Panturrilha 3x15 <input data-id="c5"></div>
+<div class="card"><div class="top" onclick="toggle(this)">
+Kickback no cabo 3x15 <input class="load" data-id="a6"></div>
+<div class="detail">Extenda o quadril para trás sem arquear a lombar.</div></div>
 
-<p>Cardio: Elíptico 15 min</p>
+<div class="cardio">Cardio: Elíptico 15 min</div>
 
-<h2>🔙 Dia D – Costas + Core</h2>
+</div>
 
-<div class="card">Puxada neutra 4x10 <input data-id="d1"></div>
-<div class="card">Remada máquina 3x12 <input data-id="d2"></div>
-<div class="card">Remada unilateral 3x12 <input data-id="d3"></div>
-<div class="card">Supino inclinado 3x12 <input data-id="d4"></div>
-<div class="card">Dead bug 3x15 <input data-id="d5"></div>
-<div class="card">Elevação pernas 3x15 <input data-id="d6"></div>
-<div class="card">Prancha 3x45s <input data-id="d7"></div>
+<!-- DIA B -->
+<div class="day">
 
-<p>Cardio: Escada 15 min</p>
+<div class="card"><div class="top" onclick="toggle(this)">
+Desenvolvimento máquina 3x12 <input class="load" data-id="b1"></div>
+<div class="detail">Empurre acima da cabeça sem arquear a lombar.</div></div>
 
-<div class="timer">
-<span id="t">60</span>
-<button onclick="start()">▶</button>
+<div class="card"><div class="top" onclick="toggle(this)">
+Elevação lateral 3x15 <input class="load" data-id="b2"></div>
+<div class="detail">Suba até a altura do ombro com controle.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Elevação frontal 3x12 <input class="load" data-id="b3"></div>
+<div class="detail">Suba sem balançar o corpo.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Rosca direta 3x12 <input class="load" data-id="b4"></div>
+<div class="detail">Cotovelos fixos ao lado do corpo.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Rosca martelo 3x12 <input class="load" data-id="b5"></div>
+<div class="detail">Pegada neutra, foco no antebraço.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Tríceps corda 3x15 <input class="load" data-id="b6"></div>
+<div class="detail">Abra a corda no final do movimento.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Tríceps testa 3x12 <input class="load" data-id="b7"></div>
+<div class="detail">Movimento apenas do antebraço.</div></div>
+
+<div class="cardio">Cardio: Escada 15 min</div>
+
+</div>
+
+<!-- DIA C -->
+<div class="day">
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Agachamento máquina (hack) 4x10 <input class="load" data-id="c1"></div>
+<div class="detail">Desça controlado e empurre pelos calcanhares.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Leg press 4x12 <input class="load" data-id="c2"></div>
+<div class="detail">Controle a descida e não trave o joelho.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Afundo com halteres 3x12 <input class="load" data-id="c3"></div>
+<div class="detail">Passo à frente e joelho traseiro próximo ao chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Cadeira extensora 3x15 <input class="load" data-id="c4"></div>
+<div class="detail">Segure 1s no topo.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Panturrilha 3x15 <input class="load" data-id="c5"></div>
+<div class="detail">Amplitude máxima e movimento lento.</div></div>
+
+<div class="cardio">Cardio: Elíptico 15 min</div>
+
+</div>
+
+<!-- DIA D -->
+<div class="day">
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Puxada neutra máquina 4x10 <input class="load" data-id="d1"></div>
+<div class="detail">Puxe com as costas, não com o braço.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Remada máquina 3x12 <input class="load" data-id="d2"></div>
+<div class="detail">Apoio no peito, foco nas escápulas.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Remada unilateral 3x12 <input class="load" data-id="d3"></div>
+<div class="detail">Puxe em direção ao quadril.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Supino inclinado 3x12 <input class="load" data-id="d4"></div>
+<div class="detail">Controle a descida.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Dead bug 3x15 <input class="load" data-id="d5"></div>
+<div class="detail">Lombar colada no chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Elevação de pernas 3x15 <input class="load" data-id="d6"></div>
+<div class="detail">Desça sem encostar no chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+Prancha 3x45s <input class="load" data-id="d7"></div>
+<div class="detail">Corpo alinhado.</div></div>
+
+<div class="cardio">Cardio: Escada 15 min</div>
+
 </div>
 
 <script>
-let timer;
-function start(){
-clearInterval(timer);
-let t=60;
-const el=document.getElementById('t');
-timer=setInterval(()=>{
-t--;
-el.innerText=t;
-if(t<=0){clearInterval(timer);el.innerText="Bora";}
-},1000);
+function show(i){
+document.querySelectorAll('.day').forEach((d,index)=>{
+d.classList.toggle('active', index===i)
+})
+document.querySelectorAll('.tab').forEach((t,index)=>{
+t.classList.toggle('active', index===i)
+})
+}
+
+function toggle(el){
+el.nextElementSibling.classList.toggle('open')
 }
 
 const data=JSON.parse(localStorage.getItem("treino")||"{}");
 
-document.querySelectorAll("input").forEach(i=>{
+document.querySelectorAll(".load").forEach(i=>{
 if(data[i.dataset.id]) i.value=data[i.dataset.id];
 
 i.oninput=()=>{
