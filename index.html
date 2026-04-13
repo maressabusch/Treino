@@ -27,6 +27,13 @@ padding:24px;
 border-bottom:1px solid var(--border);
 }
 
+header p {
+font-size:0.8rem;
+color:var(--muted);
+line-height:1.4;
+margin-top:8px;
+}
+
 .tabs {
 display:flex;
 gap:8px;
@@ -99,7 +106,7 @@ gap:4px;
 }
 
 .load {
-width:50px;
+width:55px;
 background:none;
 border:none;
 color:var(--accent);
@@ -120,8 +127,8 @@ line-height:1.5;
 .detail.open { display:block; }
 
 .detail p { margin:0 0 8px 0; }
-.detail p:last-child { margin-bottom:0; }
 .detail strong { color:var(--text); }
+
 </style>
 </head>
 
@@ -129,6 +136,12 @@ line-height:1.5;
 
 <header>
 <h1>Meu Treino 🏋🏻‍♀️</h1>
+<p>
+A: 🍑 Glúteos + Posteriores de coxa<br>
+B: 💪 Ombros + Bíceps + Tríceps<br>
+C: 🦵 Quadríceps + Glúteos (ênfase frontal)<br>
+D: 🔙 Costas + Peito + Abdômen
+</p>
 </header>
 
 <div class="tabs">
@@ -148,11 +161,13 @@ line-height:1.5;
 <div class="check" onclick="done(event,this,'a1')"></div>
 Elevação pélvica (barra) 4x12
 </div>
-<div class="load-box"><input class="load" data-id="a1">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a1">kg
+</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Escápulas apoiadas no banco, pés no chão e barra sobre o quadril (use proteção).</p>
-<p><strong>Execução:</strong> Eleve o quadril até alinhar tronco e coxas. Segure 1s no topo contraindo glúteos.</p>
+<p><strong>Setup:</strong> Escápulas apoiadas no banco, pés firmes no chão e barra sobre o quadril (use proteção).</p>
+<p><strong>Execução:</strong> Eleve o quadril até alinhar tronco e coxas. Contraia forte no topo por 1s.</p>
 <p><strong>Erros comuns:</strong> Arquear lombar, subir com impulso.</p>
 <p><strong>Músculos:</strong> Glúteo máximo.</p>
 </div>
@@ -165,12 +180,14 @@ Elevação pélvica (barra) 4x12
 <div class="check" onclick="done(event,this,'a2')"></div>
 Stiff (halter) 4x10
 </div>
-<div class="load-box"><input class="load" data-id="a2">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a2">kg
+</div>
 </div>
 <div class="detail">
 <p><strong>Setup:</strong> Em pé com halteres, pés na largura do quadril.</p>
-<p><strong>Execução:</strong> Empurre o quadril para trás mantendo a coluna neutra e suba contraindo glúteos.</p>
-<p><strong>Erros comuns:</strong> Curvar lombar, dobrar demais o joelho.</p>
+<p><strong>Execução:</strong> Empurre o quadril para trás mantendo coluna neutra. Suba contraindo glúteos.</p>
+<p><strong>Erros comuns:</strong> Curvar lombar, flexionar demais joelhos.</p>
 <p><strong>Músculos:</strong> Posterior de coxa e glúteos.</p>
 </div>
 </div>
@@ -182,7 +199,9 @@ Stiff (halter) 4x10
 <div class="check" onclick="done(event,this,'a3')"></div>
 Agachamento sumô (halter) 3x15
 </div>
-<div class="load-box"><input class="load" data-id="a3">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a3">kg
+</div>
 </div>
 <div class="detail">
 <p><strong>Setup:</strong> Pés afastados e abertos, segurando halter entre as pernas.</p>
@@ -199,12 +218,14 @@ Agachamento sumô (halter) 3x15
 <div class="check" onclick="done(event,this,'a4')"></div>
 Cadeira flexora (máquina) 3x12
 </div>
-<div class="load-box"><input class="load" data-id="a4">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a4">kg
+</div>
 </div>
 <div class="detail">
-<p><strong>Setup:</strong> Ajuste o banco alinhando o joelho com o eixo da máquina.</p>
+<p><strong>Setup:</strong> Ajuste o banco alinhando o joelho ao eixo da máquina.</p>
 <p><strong>Execução:</strong> Flexione o joelho trazendo o calcanhar ao glúteo.</p>
-<p><strong>Erros comuns:</strong> Tirar quadril do banco.</p>
+<p><strong>Erros comuns:</strong> Tirar o quadril do banco.</p>
 <p><strong>Músculos:</strong> Posterior de coxa.</p>
 </div>
 </div>
@@ -216,7 +237,9 @@ Cadeira flexora (máquina) 3x12
 <div class="check" onclick="done(event,this,'a5')"></div>
 Abdução (cabo) 3x15
 </div>
-<div class="load-box"><input class="load" data-id="a5">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a5">kg
+</div>
 </div>
 <div class="detail">
 <p><strong>Setup:</strong> Prenda a tornozeleira no cabo.</p>
@@ -233,7 +256,9 @@ Abdução (cabo) 3x15
 <div class="check" onclick="done(event,this,'a6')"></div>
 Kickback (cabo) 3x15
 </div>
-<div class="load-box"><input class="load" data-id="a6">kg</div>
+<div class="load-box">
+<input class="load" type="number" inputmode="numeric" pattern="[0-9]*" data-id="a6">kg
+</div>
 </div>
 <div class="detail">
 <p><strong>Setup:</strong> Tornozeleira presa ao cabo.</p>
@@ -293,143 +318,6 @@ const d=JSON.parse(localStorage.getItem("done")||"{}");
 d[id]=!d[id];
 localStorage.setItem("done",JSON.stringify(d));
 }
-  <!-- DIA B -->
-<div class="day">
-
-<!-- Desenvolvimento -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b1')"></div>
-Desenvolvimento (máquina) 3x12
-</div>
-<div class="load-box"><input class="load" data-id="b1">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Ajuste o banco para que as mãos fiquem na altura dos ombros. Pés firmes no chão.</p>
-<p><strong>Execução:</strong> Empurre o peso acima da cabeça até estender os braços. Desça controlando.</p>
-<p><strong>Erros comuns:</strong> Arquear lombar, descer rápido.</p>
-<p><strong>Músculos:</strong> Deltoide anterior e lateral.</p>
-</div>
-</div>
-
-<!-- Elevação lateral -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b2')"></div>
-Elevação lateral (halter) 3x15
-</div>
-<div class="load-box"><input class="load" data-id="b2">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Em pé, halteres ao lado do corpo, leve inclinação à frente.</p>
-<p><strong>Execução:</strong> Eleve os braços lateralmente até a linha do ombro.</p>
-<p><strong>Erros comuns:</strong> Usar impulso, ativar trapézio.</p>
-<p><strong>Músculos:</strong> Deltoide lateral.</p>
-</div>
-</div>
-
-<!-- Elevação frontal -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b3')"></div>
-Elevação frontal (halter) 3x12
-</div>
-<div class="load-box"><input class="load" data-id="b3">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Halteres à frente do corpo.</p>
-<p><strong>Execução:</strong> Eleve até a altura do ombro e desça controlando.</p>
-<p><strong>Erros comuns:</strong> Balançar o corpo.</p>
-<p><strong>Músculos:</strong> Deltoide anterior.</p>
-</div>
-</div>
-
-<!-- Rosca direta -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b4')"></div>
-Rosca direta (barra) 3x12
-</div>
-<div class="load-box"><input class="load" data-id="b4">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Em pé, segurando barra com pegada supinada.</p>
-<p><strong>Execução:</strong> Flexione os cotovelos levando a barra ao peito.</p>
-<p><strong>Erros comuns:</strong> Usar impulso, mexer cotovelos.</p>
-<p><strong>Músculos:</strong> Bíceps.</p>
-</div>
-</div>
-
-<!-- Rosca martelo -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b5')"></div>
-Rosca martelo (halter) 3x12
-</div>
-<div class="load-box"><input class="load" data-id="b5">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Halteres com pegada neutra.</p>
-<p><strong>Execução:</strong> Flexione mantendo a palma virada para dentro.</p>
-<p><strong>Erros comuns:</strong> Balançar o corpo.</p>
-<p><strong>Músculos:</strong> Bíceps e antebraço.</p>
-</div>
-</div>
-
-<!-- Tríceps corda -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b6')"></div>
-Tríceps (corda na polia) 3x15
-</div>
-<div class="load-box"><input class="load" data-id="b6">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Polia alta com corda, cotovelos junto ao corpo.</p>
-<p><strong>Execução:</strong> Estenda os braços e abra a corda no final.</p>
-<p><strong>Erros comuns:</strong> Mexer cotovelos, usar tronco.</p>
-<p><strong>Músculos:</strong> Tríceps.</p>
-</div>
-</div>
-
-<!-- Tríceps testa -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b7')"></div>
-Tríceps testa (barra W) 3x12
-</div>
-<div class="load-box"><input class="load" data-id="b7">kg</div>
-</div>
-<div class="detail">
-<p><strong>Setup:</strong> Deitada no banco com barra W.</p>
-<p><strong>Execução:</strong> Flexione cotovelos levando a barra à testa e estenda.</p>
-<p><strong>Erros comuns:</strong> Abrir cotovelos.</p>
-<p><strong>Músculos:</strong> Tríceps.</p>
-</div>
-</div>
-
-<!-- Cardio -->
-<div class="card">
-<div class="top" onclick="toggle(this)">
-<div class="left">
-<div class="check" onclick="done(event,this,'b8')"></div>
-Cardio (escada) 15min
-</div>
-</div>
-<div class="detail">
-<p><strong>Execução:</strong> Ritmo contínuo moderado.</p>
-<p><strong>Músculos:</strong> Sistema cardiovascular.</p>
-</div>
-</div>
-
-</div>
 </script>
 
 </body>
