@@ -128,7 +128,7 @@ line-height:1.5;
 <body>
 
 <header>
-<h1>Meu Treino 💪</h1>
+<h1>Meu Treino 🏋🏻‍♀️</h1>
 </header>
 
 <div class="tabs">
@@ -293,6 +293,143 @@ const d=JSON.parse(localStorage.getItem("done")||"{}");
 d[id]=!d[id];
 localStorage.setItem("done",JSON.stringify(d));
 }
+  <!-- DIA B -->
+<div class="day">
+
+<!-- Desenvolvimento -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b1')"></div>
+Desenvolvimento (máquina) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="b1">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Ajuste o banco para que as mãos fiquem na altura dos ombros. Pés firmes no chão.</p>
+<p><strong>Execução:</strong> Empurre o peso acima da cabeça até estender os braços. Desça controlando.</p>
+<p><strong>Erros comuns:</strong> Arquear lombar, descer rápido.</p>
+<p><strong>Músculos:</strong> Deltoide anterior e lateral.</p>
+</div>
+</div>
+
+<!-- Elevação lateral -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b2')"></div>
+Elevação lateral (halter) 3x15
+</div>
+<div class="load-box"><input class="load" data-id="b2">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Em pé, halteres ao lado do corpo, leve inclinação à frente.</p>
+<p><strong>Execução:</strong> Eleve os braços lateralmente até a linha do ombro.</p>
+<p><strong>Erros comuns:</strong> Usar impulso, ativar trapézio.</p>
+<p><strong>Músculos:</strong> Deltoide lateral.</p>
+</div>
+</div>
+
+<!-- Elevação frontal -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b3')"></div>
+Elevação frontal (halter) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="b3">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Halteres à frente do corpo.</p>
+<p><strong>Execução:</strong> Eleve até a altura do ombro e desça controlando.</p>
+<p><strong>Erros comuns:</strong> Balançar o corpo.</p>
+<p><strong>Músculos:</strong> Deltoide anterior.</p>
+</div>
+</div>
+
+<!-- Rosca direta -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b4')"></div>
+Rosca direta (barra) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="b4">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Em pé, segurando barra com pegada supinada.</p>
+<p><strong>Execução:</strong> Flexione os cotovelos levando a barra ao peito.</p>
+<p><strong>Erros comuns:</strong> Usar impulso, mexer cotovelos.</p>
+<p><strong>Músculos:</strong> Bíceps.</p>
+</div>
+</div>
+
+<!-- Rosca martelo -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b5')"></div>
+Rosca martelo (halter) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="b5">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Halteres com pegada neutra.</p>
+<p><strong>Execução:</strong> Flexione mantendo a palma virada para dentro.</p>
+<p><strong>Erros comuns:</strong> Balançar o corpo.</p>
+<p><strong>Músculos:</strong> Bíceps e antebraço.</p>
+</div>
+</div>
+
+<!-- Tríceps corda -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b6')"></div>
+Tríceps (corda na polia) 3x15
+</div>
+<div class="load-box"><input class="load" data-id="b6">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Polia alta com corda, cotovelos junto ao corpo.</p>
+<p><strong>Execução:</strong> Estenda os braços e abra a corda no final.</p>
+<p><strong>Erros comuns:</strong> Mexer cotovelos, usar tronco.</p>
+<p><strong>Músculos:</strong> Tríceps.</p>
+</div>
+</div>
+
+<!-- Tríceps testa -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b7')"></div>
+Tríceps testa (barra W) 3x12
+</div>
+<div class="load-box"><input class="load" data-id="b7">kg</div>
+</div>
+<div class="detail">
+<p><strong>Setup:</strong> Deitada no banco com barra W.</p>
+<p><strong>Execução:</strong> Flexione cotovelos levando a barra à testa e estenda.</p>
+<p><strong>Erros comuns:</strong> Abrir cotovelos.</p>
+<p><strong>Músculos:</strong> Tríceps.</p>
+</div>
+</div>
+
+<!-- Cardio -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'b8')"></div>
+Cardio (escada) 15min
+</div>
+</div>
+<div class="detail">
+<p><strong>Execução:</strong> Ritmo contínuo moderado.</p>
+<p><strong>Músculos:</strong> Sistema cardiovascular.</p>
+</div>
+</div>
+
+</div>
 </script>
 
 </body>
