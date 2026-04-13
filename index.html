@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Meu Treino</title>
 
 <style>
@@ -56,7 +55,6 @@ background:var(--card);
 border-radius:12px;
 margin-bottom:10px;
 overflow:hidden;
-transition:0.2s;
 }
 
 .card.done {
@@ -116,6 +114,7 @@ padding:10px;
 font-size:0.85rem;
 color:#ccc;
 border-top:1px solid #333;
+line-height:1.5;
 }
 
 .detail.open { display:block; }
@@ -126,6 +125,7 @@ border-top:1px solid #333;
 
 <header>
 <h1>Meu Treino 💪</h1>
+<p>4 dias · Glúteo + braços + definição</p>
 </header>
 
 <div class="tabs">
@@ -138,6 +138,7 @@ border-top:1px solid #333;
 <!-- DIA A -->
 <div class="day active">
 
+<!-- Hip thrust -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
 <div class="left">
@@ -147,10 +148,11 @@ Elevação pélvica 4x12
 <div class="load-box"><input class="load" data-id="a1">kg</div>
 </div>
 <div class="detail">
-Apoie as escápulas no banco, pés firmes no chão. Suba o quadril até alinhar tronco e coxa. Contraia forte o glúteo no topo e evite hiperextensão lombar. Desça controlado.
+Escápulas apoiadas no banco, pés firmes. Eleve o quadril até alinhar tronco e coxa. Contraia forte o glúteo no topo sem arquear a lombar. Desça controlado.
 </div>
 </div>
 
+<!-- Stiff -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
 <div class="left">
@@ -160,21 +162,222 @@ Stiff 4x10
 <div class="load-box"><input class="load" data-id="a2">kg</div>
 </div>
 <div class="detail">
-Joelhos levemente flexionados. Desça empurrando o quadril para trás, mantendo a coluna neutra. Pare quando perder a tensão no posterior. Suba contraindo glúteo.
+Joelhos levemente flexionados. Desça empurrando o quadril para trás mantendo a coluna neutra. Sinta alongamento no posterior. Suba contraindo glúteo.
 </div>
 </div>
 
+<!-- Sumô -->
 <div class="card">
 <div class="top" onclick="toggle(this)">
 <div class="left">
 <div class="check" onclick="done(event,this,'a3')"></div>
+Agachamento sumô 3x15
+</div>
+<div class="load-box"><input class="load" data-id="a3">kg</div>
+</div>
+<div class="detail">
+Pés bem afastados e abertos. Desça mantendo joelhos alinhados aos pés. Foco em glúteo e adutores.
+</div>
+</div>
+
+<!-- Flexora -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'a4')"></div>
+Cadeira flexora 3x12
+</div>
+<div class="load-box"><input class="load" data-id="a4">kg</div>
+</div>
+<div class="detail">
+Flexione trazendo o calcanhar em direção ao glúteo. Segure 1s no topo e desça devagar.
+</div>
+</div>
+
+<!-- Abdução -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'a5')"></div>
+Abdução no cabo 3x15
+</div>
+<div class="load-box"><input class="load" data-id="a5">kg</div>
+</div>
+<div class="detail">
+Afaste a perna lateralmente sem inclinar o tronco. Movimento controlado.
+</div>
+</div>
+
+<!-- Kickback -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'a6')"></div>
+Kickback 3x15
+</div>
+<div class="load-box"><input class="load" data-id="a6">kg</div>
+</div>
+<div class="detail">
+Empurre a perna para trás estendendo o quadril. Evite compensar com a lombar.
+</div>
+</div>
+
+<!-- Cardio -->
+<div class="card">
+<div class="top" onclick="toggle(this)">
+<div class="left">
+<div class="check" onclick="done(event,this,'a7')"></div>
 Cardio: Elíptico 15min
 </div>
 </div>
 <div class="detail">
-Ritmo contínuo moderado. Foque em manter frequência cardíaca elevada sem exaustão total.
+Ritmo contínuo moderado. Objetivo: manter frequência cardíaca elevada.
 </div>
 </div>
+
+</div>
+
+<!-- DIA B -->
+<div class="day">
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b1')"></div>Desenvolvimento máquina 3x12</div>
+<div class="load-box"><input class="load" data-id="b1">kg</div>
+</div>
+<div class="detail">Empurre acima da cabeça mantendo core firme e lombar neutra.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b2')"></div>Elevação lateral 3x15</div>
+<div class="load-box"><input class="load" data-id="b2">kg</div>
+</div>
+<div class="detail">Suba até a linha do ombro com controle, sem impulso.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b3')"></div>Elevação frontal 3x12</div>
+<div class="load-box"><input class="load" data-id="b3">kg</div>
+</div>
+<div class="detail">Suba o halter à frente sem balançar o corpo.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b4')"></div>Rosca direta 3x12</div>
+<div class="load-box"><input class="load" data-id="b4">kg</div>
+</div>
+<div class="detail">Cotovelos fixos. Movimento controlado.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b5')"></div>Rosca martelo 3x12</div>
+<div class="load-box"><input class="load" data-id="b5">kg</div>
+</div>
+<div class="detail">Pegada neutra, foco no antebraço.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b6')"></div>Tríceps corda 3x15</div>
+<div class="load-box"><input class="load" data-id="b6">kg</div>
+</div>
+<div class="detail">Abra a corda no final do movimento.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b7')"></div>Tríceps testa 3x12</div>
+<div class="load-box"><input class="load" data-id="b7">kg</div>
+</div>
+<div class="detail">Movimento apenas do antebraço.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'b8')"></div>Cardio: Escada 15min</div>
+</div>
+<div class="detail">Ritmo contínuo, foco em gasto calórico.</div></div>
+
+</div>
+
+<!-- DIA C -->
+<div class="day">
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c1')"></div>Agachamento máquina 4x10</div>
+<div class="load-box"><input class="load" data-id="c1">kg</div>
+</div>
+<div class="detail">Desça controlado e empurre pelos calcanhares.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c2')"></div>Leg press 4x12</div>
+<div class="load-box"><input class="load" data-id="c2">kg</div>
+</div>
+<div class="detail">Controle total do movimento.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c3')"></div>Afundo 3x12</div>
+<div class="load-box"><input class="load" data-id="c3">kg</div>
+</div>
+<div class="detail">Passo firme, joelho traseiro próximo ao chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c4')"></div>Extensora 3x15</div>
+<div class="load-box"><input class="load" data-id="c4">kg</div>
+</div>
+<div class="detail">Segure 1s no topo.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c5')"></div>Panturrilha 3x15</div>
+<div class="load-box"><input class="load" data-id="c5">kg</div>
+</div>
+<div class="detail">Amplitude máxima e controle.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'c6')"></div>Cardio: Elíptico 15min</div>
+</div>
+<div class="detail">Ritmo contínuo moderado.</div></div>
+
+</div>
+
+<!-- DIA D -->
+<div class="day">
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d1')"></div>Puxada neutra 4x10</div>
+<div class="load-box"><input class="load" data-id="d1">kg</div>
+</div>
+<div class="detail">Puxe com as costas, não com o braço.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d2')"></div>Remada máquina 3x12</div>
+<div class="load-box"><input class="load" data-id="d2">kg</div>
+</div>
+<div class="detail">Foco em aproximar escápulas.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d3')"></div>Remada unilateral 3x12</div>
+<div class="load-box"><input class="load" data-id="d3">kg</div>
+</div>
+<div class="detail">Puxe em direção ao quadril.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d4')"></div>Supino inclinado 3x12</div>
+<div class="load-box"><input class="load" data-id="d4">kg</div>
+</div>
+<div class="detail">Controle a descida.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d5')"></div>Dead bug 3x15</div>
+<div class="load-box"><input class="load" data-id="d5">kg</div>
+</div>
+<div class="detail">Core firme, lombar no chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d6')"></div>Elevação pernas 3x15</div>
+<div class="load-box"><input class="load" data-id="d6">kg</div>
+</div>
+<div class="detail">Desça sem tocar o chão.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d7')"></div>Prancha 3x45s</div>
+<div class="load-box"><input class="load" data-id="d7">kg</div>
+</div>
+<div class="detail">Corpo alinhado.</div></div>
+
+<div class="card"><div class="top" onclick="toggle(this)">
+<div class="left"><div class="check" onclick="done(event,this,'d8')"></div>Cardio: Escada 15min</div>
+</div>
+<div class="detail">Ritmo contínuo.</div></div>
 
 </div>
 
