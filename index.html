@@ -1426,49 +1426,6 @@ Cardio (escada) 15 min
 
 </div>
 
-<script>
-
-const subtitles = [
-"🍑 Glúteos + Posteriores de coxa",
-"💪 Ombros + Bíceps + Tríceps",
-"🦵 Quadríceps + Glúteos (ênfase frontal)",
-"🔙 Costas + Peito + Abdômen"
-];
-
-function show(i){
-document.querySelectorAll('.day').forEach((d,index)=>{
-d.classList.toggle('active', index===i)
-})
-document.querySelectorAll('.tab').forEach((t,index)=>{
-t.classList.toggle('active', index===i)
-})
-document.getElementById("subtitle").innerText = subtitles[i];
-}
-
-function toggle(el){
-el.nextElementSibling.classList.toggle('open')
-}
-
-const data=JSON.parse(localStorage.getItem("treino")||"{}");
-
-document.querySelectorAll(".load").forEach(i=>{
-if(data[i.dataset.id]) i.value=data[i.dataset.id];
-
-i.oninput=()=>{
-data[i.dataset.id]=i.value;
-localStorage.setItem("treino",JSON.stringify(data));
-}
-});
-
-function done(e,el,id){
-e.stopPropagation();
-el.classList.toggle("done");
-el.closest(".card").classList.toggle("done");
-
-const d=JSON.parse(localStorage.getItem("done")||"{}");
-d[id]=!d[id];
-localStorage.setItem("done",JSON.stringify(d));
-}
 
 </script>
   
